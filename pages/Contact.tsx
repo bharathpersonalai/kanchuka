@@ -1,7 +1,10 @@
 import React from 'react';
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Contact: React.FC = () => {
+  const heroAnim = useScrollAnimation('up', 0);
+
   return (
     <div className="bg-kanchuka-cream min-h-screen">
       {/* Hero Header */}
@@ -17,8 +20,10 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center px-6">
-          <span className="text-white font-sans uppercase tracking-[0.5em] text-[10px] md:text-xs font-bold mb-4 block drop-shadow-lg">Get in Touch</span>
-          <h1 className="font-serif text-5xl md:text-7xl text-white drop-shadow-2xl">Let's Create <br /><span className="italic text-kanchuka-primary">Something Beautiful</span></h1>
+          <div {...heroAnim}>
+            <span className="text-white font-sans uppercase tracking-[0.5em] text-[10px] md:text-xs font-bold mb-4 block drop-shadow-lg">Get in Touch</span>
+            <h1 className="font-serif text-5xl md:text-7xl text-white drop-shadow-2xl">Let's Create <br /><span className="italic text-kanchuka-primary">Something Beautiful</span></h1>
+          </div>
         </div>
       </section>
 

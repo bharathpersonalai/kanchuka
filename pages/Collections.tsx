@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CollectionItem } from '../types';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const MOCK_COLLECTION: CollectionItem[] = [
   { id: 1, title: 'Royal Velvet Lehenga', category: 'Bridal', imageUrl: '/c1.jpg', price: 'On Request' },
@@ -17,6 +18,7 @@ const CATEGORIES = ['All', 'Bridal', 'Ethnic', 'Sarees', 'Indo-Western'];
 
 const Collections: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const headerAnim = useScrollAnimation('up', 0);
 
   const filteredItems = activeCategory === 'All'
     ? MOCK_COLLECTION
@@ -38,12 +40,14 @@ const Collections: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center w-full">
-          <span className="text-white font-sans uppercase tracking-[0.5em] text-[10px] md:text-sm font-bold mb-4 block drop-shadow-lg">
-            Curated Portfolios
-          </span>
-          <h1 className="font-serif text-5xl md:text-8xl text-white drop-shadow-2xl">
-            Artistry in <br /><span className="italic text-kanchuka-primary">Threads</span>
-          </h1>
+          <div {...headerAnim}>
+            <span className="text-white font-sans uppercase tracking-[0.5em] text-[10px] md:text-sm font-bold mb-4 block drop-shadow-lg">
+              Curated Portfolios
+            </span>
+            <h1 className="font-serif text-5xl md:text-8xl text-white drop-shadow-2xl">
+              Artistry in <br /><span className="italic text-kanchuka-primary">Threads</span>
+            </h1>
+          </div>
         </div>
       </section>
 

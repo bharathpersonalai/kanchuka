@@ -1,7 +1,11 @@
 import React from 'react';
 import { Sparkles, Heart, Scissors, Award } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const About: React.FC = () => {
+    const heroAnim = useScrollAnimation('up', 0);
+    const philosophyAnim = useScrollAnimation('left', 100);
+
     return (
         <div className="bg-kanchuka-cream min-h-screen">
             {/* Hero Section */}
@@ -16,10 +20,12 @@ const About: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-kanchuka-dark via-transparent to-kanchuka-dark/60"></div>
                 </div>
 
-                <div className="relative z-10 text-center px-6 animate-fade-in-up">
-                    <span className="text-white font-sans uppercase tracking-[0.5em] text-[10px] md:text-sm font-bold mb-4 block drop-shadow-lg">Our Legacy</span>
-                    <h1 className="font-serif text-5xl md:text-8xl text-white mb-6 drop-shadow-2xl">The Soul of <br /><span className="italic text-kanchuka-primary">Kanchuka</span></h1>
-                    <p className="font-sans text-gray-200 uppercase tracking-[0.3em] text-[10px] md:text-xs drop-shadow-md">Crafting Elegance Since 1998</p>
+                <div className="relative z-10 text-center px-6">
+                    <div {...heroAnim}>
+                        <span className="text-white font-sans uppercase tracking-[0.5em] text-[10px] md:text-sm font-bold mb-4 block drop-shadow-lg">Our Legacy</span>
+                        <h1 className="font-serif text-5xl md:text-8xl text-white mb-6 drop-shadow-2xl">The Soul of <br /><span className="italic text-kanchuka-primary">Kanchuka</span></h1>
+                        <p className="font-sans text-gray-200 uppercase tracking-[0.3em] text-[10px] md:text-xs drop-shadow-md">Crafting Elegance Since 1998</p>
+                    </div>
                 </div>
             </section>
 

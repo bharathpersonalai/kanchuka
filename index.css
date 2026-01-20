@@ -202,3 +202,9 @@ h6 {
 .delay-5 {
     animation-delay: 0.5s;
 }
+
+/* Scroll Animation */
+.animate-in {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}

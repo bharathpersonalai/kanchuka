@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Scissors } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Home: React.FC = () => {
+  const heroAnim = useScrollAnimation('left', 0);
+  const philosophyTitleAnim = useScrollAnimation('left', 100);
+  const philosophyTextAnim = useScrollAnimation('right', 200);
+  const collectionsTitleAnim = useScrollAnimation('up', 0);
+
   return (
     <div className="flex flex-col min-h-screen bg-kanchuka-cream">
       {/* Hero Section */}
@@ -17,9 +23,9 @@ const Home: React.FC = () => {
         </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-          <div className="max-w-2xl text-left animate-fade-in-up md:mt-20">
+          <div {...heroAnim} className="max-w-2xl text-left md:mt-20">
             <span className="text-white font-sans uppercase tracking-[0.5em] text-sm md:text-lg font-bold mb-6 block drop-shadow-2xl">
-              The Art of Bespoke Couture
+              The Art of Elegance
             </span>
             <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white mb-6 md:mb-8 leading-[1.1] md:leading-[0.9] tracking-tighter drop-shadow-2xl">
               Timeless <br />
@@ -71,30 +77,34 @@ const Home: React.FC = () => {
             </div>
 
             <div className="lg:col-span-7 pl-0 lg:pl-16">
-              <span className="text-kanchuka-gold font-sans uppercase tracking-widest text-sm mb-4 block font-bold">Our Philosophy</span>
-              <h2 className="font-serif text-5xl md:text-6xl text-kanchuka-dark mb-8 leading-tight">
-                Where Hand-Crafted <br />
-                <span className="text-kanchuka-primary">Meets Modern Grace</span>
-              </h2>
-              <p className="font-sans text-xl text-gray-600 leading-relaxed mb-10">
-                At Kanchuka, we believe every garment should be as unique as the person wearing it. Our artisans spend hundreds of hours on a single piece, ensuring every stitch is a testament to quality. We honor the traditions of the past while designing for the confident woman of today.
-              </p>
-
-              <div className="grid grid-cols-2 gap-8 mb-12">
-                <div>
-                  <h4 className="font-serif text-3xl text-kanchuka-primary mb-2">100%</h4>
-                  <p className="font-sans text-sm text-gray-500 uppercase tracking-widest">Handmade Detail</p>
-                </div>
-                <div>
-                  <h4 className="font-serif text-3xl text-kanchuka-primary mb-2">25+</h4>
-                  <p className="font-sans text-sm text-gray-500 uppercase tracking-widest">Master Artisans</p>
-                </div>
+              <div {...philosophyTitleAnim}>
+                <span className="text-kanchuka-gold font-sans uppercase tracking-widest text-sm mb-4 block font-bold">Our Philosophy</span>
+                <h2 className="font-serif text-5xl md:text-6xl text-kanchuka-dark mb-8 leading-tight">
+                  Where Hand-Crafted <br />
+                  <span className="text-kanchuka-primary">Meets Modern Grace</span>
+                </h2>
               </div>
+              <div {...philosophyTextAnim}>
+                <p className="font-sans text-xl text-gray-600 leading-relaxed mb-10">
+                  At Kanchuka, we believe every garment should be as unique as the person wearing it. Our artisans spend hundreds of hours on a single piece, ensuring every stitch is a testament to quality. We honor the traditions of the past while designing for the confident woman of today.
+                </p>
 
-              <Link to="/contact" className="inline-flex items-center gap-3 text-kanchuka-primary font-bold uppercase tracking-[0.2em] group">
-                The Kanchuka Experience
-                <span className="w-12 h-px bg-kanchuka-primary group-hover:w-20 transition-all duration-300"></span>
-              </Link>
+                <div className="grid grid-cols-2 gap-8 mb-12">
+                  <div>
+                    <h4 className="font-serif text-3xl text-kanchuka-primary mb-2">100%</h4>
+                    <p className="font-sans text-sm text-gray-500 uppercase tracking-widest">Handmade Detail</p>
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-3xl text-kanchuka-primary mb-2">25+</h4>
+                    <p className="font-sans text-sm text-gray-500 uppercase tracking-widest">Master Artisans</p>
+                  </div>
+                </div>
+
+                <Link to="/contact" className="inline-flex items-center gap-3 text-kanchuka-primary font-bold uppercase tracking-[0.2em] group">
+                  The Kanchuka Experience
+                  <span className="w-12 h-px bg-kanchuka-primary group-hover:w-20 transition-all duration-300"></span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -104,7 +114,7 @@ const Home: React.FC = () => {
       <section className="py-24 bg-kanchuka-dark text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8">
-            <div>
+            <div {...collectionsTitleAnim}>
               <span className="text-kanchuka-gold uppercase tracking-[0.3em] text-[10px] md:text-xs mb-4 block">Curated Portfolios</span>
               <h2 className="font-serif text-4xl md:text-7xl">Signature <br /><span className="italic text-kanchuka-gold">Series</span></h2>
             </div>
