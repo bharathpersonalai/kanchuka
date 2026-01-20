@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import { CollectionItem } from '../types';
 
 const MOCK_COLLECTION: CollectionItem[] = [
-  { id: 1, title: 'Royal Velvet Lehenga', category: 'Bridal', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Bridal+Lehenga', price: 'On Request' },
-  { id: 2, title: 'Banarasi Silk Anarkali', category: 'Ethnic', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Silk+Anarkali', price: '$450' },
-  { id: 3, title: 'Floral Organza Saree', category: 'Sarees', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Organza+Saree', price: '$220' },
-  { id: 4, title: 'Embroidered Raw Silk Blouse', category: 'Blouses', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Silk+Blouse', price: '$120' },
-  { id: 5, title: 'Fusion Crop Top Skirt', category: 'Indo-Western', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Fusion+Set', price: '$300' },
-  { id: 6, title: 'Zardosi Work Dupatta', category: 'Accessories', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Zardosi+Dupatta', price: '$150' },
-  { id: 7, title: 'Pastel Engagement Gown', category: 'Bridal', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Bridal+Gown', price: 'On Request' },
-  { id: 8, title: 'Cotton Ikkat Kurta', category: 'Casual', imageUrl: 'https://placehold.co/400x600/fdf2f7/d13b7d?text=Ikkat+Kurta', price: '$80' },
+  { id: 1, title: 'Royal Velvet Lehenga', category: 'Bridal', imageUrl: '/c1.jpg', price: 'On Request' },
+  { id: 2, title: 'Banarasi Silk Anarkali', category: 'Ethnic', imageUrl: '/c2.jpg', price: '₹4500' },
+  { id: 3, title: 'Floral Organza Saree', category: 'Sarees', imageUrl: '/c3.jpg', price: '₹2200' },
+  { id: 4, title: 'Embroidered Raw Silk Blouse', category: 'Blouses', imageUrl: '/c4.jpg', price: '₹1200' },
+  { id: 5, title: 'Fusion Crop Top Skirt', category: 'Indo-Western', imageUrl: '/c5.jpg', price: '₹3000' },
+  { id: 6, title: 'Zardosi Work Dupatta', category: 'Accessories', imageUrl: '/c6.jpg', price: '₹1500' },
+  { id: 7, title: 'Pastel Engagement Gown', category: 'Bridal', imageUrl: '/c7.jpg', price: 'On Request' },
+  { id: 8, title: 'Cotton Ikkat Kurta', category: 'Casual', imageUrl: '/c8.jpg', price: '₹8000' },
 ];
 
 const CATEGORIES = ['All', 'Bridal', 'Ethnic', 'Sarees', 'Indo-Western'];

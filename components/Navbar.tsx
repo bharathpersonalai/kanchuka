@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               <img
                 src="/klogo.png"
                 alt="Kanchuka Logo"
-                className="w-48 sm:w-56 md:w-72 lg:w-40 h-auto object-contain transition-all duration-500 hover:scale-105"
+                className="w-32 sm:w-56 md:w-72 lg:w-40 h-auto object-contain transition-all duration-500 hover:scale-105"
               />
             </Link>
           </div>
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center z-[110]">
+          <div className="lg:hidden flex items-center z-[1000]">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-kanchuka-dark hover:text-kanchuka-primary transition-colors duration-300"
@@ -71,29 +71,23 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`lg:hidden fixed inset-0 z-[100] bg-white transition-all duration-700 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-          }`}
-      >
-        <div className="flex flex-col items-center justify-center h-full space-y-10 px-6">
-          <div className="mb-12 opacity-30">
-            <img src="/klogo.png" alt="Logo" className="w-48 h-auto grayscale" />
-          </div>
-          {navLinks.map((link, idx) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`font-serif text-4xl tracking-widest transition-all duration-500 delay-[${idx * 100}ms] ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                } ${isActive(link.path) ? 'text-kanchuka-primary' : 'text-kanchuka-dark'}`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <div className="pt-12 border-t border-kanchuka-primary/10 w-full text-center">
-            <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-gray-400">The Art of Elegance</p>
+        {/* Mobile Menu Dropdown */}
+        <div
+          className={`lg:hidden absolute top-24 right-4 w-64 bg-kanchuka-dark rounded-2xl shadow-2xl border border-kanchuka-primary/30 transform transition-all duration-300 origin-top-right ${isOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible pointer-events-none'
+            }`}
+        >
+          <div className="flex flex-col items-center py-8 space-y-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`font-serif text-lg uppercase tracking-widest transition-colors duration-300 ${isActive(link.path) ? 'text-kanchuka-primary' : 'text-white hover:text-kanchuka-primary'
+                  }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

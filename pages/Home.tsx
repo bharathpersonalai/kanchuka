@@ -62,7 +62,7 @@ const Home: React.FC = () => {
             <div className="lg:col-span-5 relative">
               <div className="relative z-10 animate-fade-in">
                 <img
-                  src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=2070&auto=format&fit=crop"
+                  src="/kg4.jpg"
                   alt="Process"
                   className="w-full aspect-[4/5] object-cover shadow-[40px_40px_0px_-10px_rgba(212,175,55,0.1)]"
                 />
@@ -115,9 +115,9 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: 'The Bridal Edit', img: 'https://placehold.co/600x800/2d3436/d13b7d?text=Bridal+Edit' },
-              { title: 'Evening Soirée', img: 'https://placehold.co/600x800/2d3436/d13b7d?text=Evening+Soiree' },
-              { title: 'Modern Heritage', img: 'https://placehold.co/600x800/2d3436/d13b7d?text=Modern+Heritage' }
+              { title: 'The Bridal Edit', img: '/kg1.jpg' },
+              { title: 'Evening Soirée', img: '/kg2.jpg' },
+              { title: 'Modern Heritage', img: '/kg3.jpg' }
             ].map((item, idx) => (
               <div key={idx} className="group relative aspect-[3/4] overflow-hidden cursor-pointer">
                 <img
